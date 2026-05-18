@@ -230,3 +230,8 @@ If you have been assigned a **PM** role for this project, please find what your 
 [Back](../README.md)
 
 ---
+
+Working Plan:
+- Split into teams. One does HL data flow diagram, other does entity relationship diagram
+- Split into teams. One does frontend and wirefames, other does backend API & SQL database
+- Bother teams join frontend backend together with javascript file and do security
