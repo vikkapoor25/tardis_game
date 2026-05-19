@@ -1,38 +1,78 @@
-// Submit form selction to api
 const answerForm = document.querySelector("#answerForm");
 const gameContainer = document.querySelector("#gameContainer");
+const nextButton = document.querySelector("#go-next")
+const questionNumber = 1
+const score = 0
 
-answerForm.addEventListener("submit", async (e) => {
+nextButton.addEventListener("click", loadQuestion())
+
+//Load questions from API
+// const scenario
+function getScenario(scenario_id){
+    // const response;
+    // return response
+}
+//scenario = getScenario()
+
+// Test data
+const exampleQuestions = [
+    {question_id: 1,
+    question: "what is 2+2?",
+    answer: "4",
+    correct_response: "well done",
+    incorrect_reponse:"no i dont think so",
+    option_1: "3",
+    option_2:"4",
+    option_3:"5",
+    explanation:"explain addition"},
+
+    {question_id: 2,
+    question: "what is 3+3?",
+    answer: "6",
+    correct_response: "well done",
+    incorrect_reponse:"no i dont think so",
+    option_1: "6",
+    option_2:"4",
+    option_3:"5",
+    explanation:"explain addition"},
+     
+]
+// Check answer and go to next question
+answerForm.addEventListener("submit", (e) => {
     e.preventDefault()
     const form = new FormData(e.target);
+    const scenarioRow = exampleQuestions.question_id
 
     console.log(form);
-
-     const options = {
-        method: "GET",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            option: form.get("options"),
-        })
+    if (form.get("options") == scenarioRow.answer){
+        score +=1
+        //questionNumber +=1 add in go next
+        displayDialogue(scenarioRow.correct_response)
     }
-    // Add fetch request to api link here
-    const response;
-    displayDialgoue(response);
-
+    else{
+        //questionNumber +=1
+        displayDialogue(scenarioRow.incorrect_reponse)
+    }
+    // loadNextQuestion() += in next button
 })
-//Load questions
-function getQuestions(){
-    const response;
-    
+
+function loadQuestion(question_id){
+    document.querySelector("#option_one").value = scenario.rows[question_id].option_1
+    document.querySelector("#option_two").value = scenario.rows[question_id].option_2
+    document.querySelector("#option_three").value = scenario.rows[question_id].option_3
+    displayDialogue(scenario.rows[question_id].question)
 }
 
 // Display dialogue 
 function displayDialogue(dialogue){
-    const speechBubble = document.createElement("p");
-    speechBubble.innerHTML = dialogue;
-    speechBubble.style.background = "white";
+    gameContainer.innerHTML="";
+    const speechBubble = document.createElement("div");
+    const questionText = document.createElement("p")
+    speechBubble.className = "speech-bubble"
+    questionText.textContent = dialogue
     gameContainer.appendChild(speechBubble)
+    speechBubble.appendChild(questionText)
+    
 }
+
+displayDialogue(exampleQuestions.question);
