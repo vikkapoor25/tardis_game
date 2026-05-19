@@ -59,3 +59,18 @@ footer{
     justify-content: right;
     align-items: right;
 }
+
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#initialSetting {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(156, 145, 115, 0.9);
+}
