@@ -5,6 +5,26 @@ const resultsContainer = document.querySelector("#results-container")
 
 // need async function for fetching results for all wrong answer explanations for the scenario
 
+async function displayResult(score){
+    let header = document.createElement("h2")
+    const resultsCard = document.createElement("div")
+    let resultText = document.createElement("p")
+
+    resultsCard.className = "result-card"
+
+    if (score===9){
+        header.textContent = "Congratulations!"
+        resultText.textContent = `You scored 9/9 on Railway Revolutions, Keep it up!`
+    }else{
+        header.textContent = "Almost!"
+        resultText.textContent = `You scored ${score}/9 on Railway Revolutions, Go over the explanations below!`
+    }
+
+    resultsContainer.appendChild(resultsCard)
+    resultsCard.appendChild(header)
+    resultsCard.appendChild(resultText)
+}
+
 async function displayExplanations(explanation){
     explanationContainer.innerHTML = "";
     if (explanation.length > 0){
@@ -27,5 +47,8 @@ const explanations = [
     { text: "Example of explantions 2" }
 ];
 
+const score = 5
+
 
 displayExplanations(explanations);
+displayResult(score);
