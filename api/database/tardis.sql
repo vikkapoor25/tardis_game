@@ -39,7 +39,7 @@ CREATE TABLE questions (
     FOREIGN KEY (scenario_id) REFERENCES scenarios(scenario_id)
 );
 
-INSERT INTO questions (scenario_id, question, answer, correct_response, incorrect_response, explaination)
+INSERT INTO questions (scenario_id, question, answer, correct_response, incorrect_response, explanation)
 VALUES
     (1, 'I don''t know, I just build things. Got this fancy engine from a bloke named James. The efficiency of this steam engine''s incredible! Can''t remember his last name though. Do you know it?',
     'Watt', 'Ah yes, that''s his name!!', 'Nah, I don''t think that''s quite right ...',

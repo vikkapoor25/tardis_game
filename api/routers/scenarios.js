@@ -1,11 +1,15 @@
 const { Router } = require('express');
 
 const scenarioController = require('../controllers/scenarios');
+const explanationController = require('../controllers/explanations');
 
 const scenarioRouter = Router();
+const explanationRouter = Router();
 
-scenarioRouter.get('/', scenarioController.index);
-scenarioRouter.get('/:id', scenarioController.show);
-scenarioRouter.get('/:id/questions', scenarioController.questions);
 
-module.exports = scenarioRouter;
+scenarioRouter.get('/', scenarioController.indexScenario);
+explanationRouter.get('/', explanationController.indexExplanation);
+
+module.exports = {
+    scenarioRouter, 
+    explanationRouter};
