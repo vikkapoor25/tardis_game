@@ -1,10 +1,11 @@
 const answerForm = document.querySelector("#answerForm");
 const gameContainer = document.querySelector("#gameContainer");
 const nextButton = document.querySelector("#go-next")
-const questionNumber = 1
-const score = 0
+const gameHeader= document.querySelector("#game-header")
+let questionNumber = -1
+let score = 0
 
-nextButton.addEventListener("click", loadQuestion())
+nextButton.addEventListener("click", () => loadQuestion(questionNumber))
 
 //Load questions from API
 // const scenario
@@ -24,7 +25,7 @@ const exampleQuestions = [
     option_1: "3",
     option_2:"4",
     option_3:"5",
-    explanation:"explain addition"},
+        },
 
     {question_id: 2,
     question: "what is 3+3?",
@@ -34,33 +35,49 @@ const exampleQuestions = [
     option_1: "6",
     option_2:"4",
     option_3:"5",
-    explanation:"explain addition"},
+    }
      
 ]
 // Check answer and go to next question
 answerForm.addEventListener("submit", (e) => {
     e.preventDefault()
     const form = new FormData(e.target);
-    const scenarioRow = exampleQuestions.question_id
+    const scenarioRow = exampleQuestions[questionNumber]
 
-    console.log(form);
-    if (form.get("options") == scenarioRow.answer){
+    console.log(form.get("options"));
+    console.log(scenarioRow);
+    console.log(scenarioRow.answer)
+    if (form.get("options") === scenarioRow.answer){
         score +=1
-        //questionNumber +=1 add in go next
         displayDialogue(scenarioRow.correct_response)
     }
     else{
         //questionNumber +=1
         displayDialogue(scenarioRow.incorrect_reponse)
     }
-    // loadNextQuestion() += in next button
+    document.querySelector("#submitBtn").disabled = true
+
+    //Lock form once submitted
+    // const elements = answerForm.elements;
+    // for (let i = 0; i < elements.length; i++) {
+    //   elements[i].disabled = true;
+    // }
 })
 
-function loadQuestion(question_id){
-    document.querySelector("#option_one").value = scenario.rows[question_id].option_1
-    document.querySelector("#option_two").value = scenario.rows[question_id].option_2
-    document.querySelector("#option_three").value = scenario.rows[question_id].option_3
-    displayDialogue(scenario.rows[question_id].question)
+function loadQuestion(inputQuestionNumber){
+    questionNumber+=1
+    document.querySelector("#submitBtn").disabled = false
+    const scenarioRow = exampleQuestions[questionNumber]
+    const optionOne = document.querySelector("#option_one")
+    const optionTwo = document.querySelector("#option_two")
+    const optionThree = document.querySelector("#option_three")
+    optionOne.value = scenarioRow.option_1
+    optionTwo.value = scenarioRow.option_2
+    optionThree.value = scenarioRow.option_3
+    optionOne.textContent = optionOne.value
+    optionTwo.textContent = optionTwo.value
+    optionThree.textContent = optionThree.value
+    displayDialogue(scenarioRow.question)
 }
 
 // Display dialogue 
@@ -75,4 +92,10 @@ function displayDialogue(dialogue){
     
 }
 
-displayDialogue(exampleQuestions.question);
+loadQuestion(questionNumber);
+
+//loadQuestion() -> displayDialogue()
+
+// Load in question 1: loadQuestion(0)
+// Display question 1: displayDialogue(scenarioRow.question)
+//click submit to update dialogue:  displayDialogue()
