@@ -15,12 +15,15 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         })
     }
 
-    const response = await fetch("render_api_link/users/login", options)
-    const data = await response.json()
+    // const response = await fetch("render_api_link/users/login", options)
+    // const data = await response.json()
+    const response = {
+        status: 200
+    }
 
     if (response.status == 200) {
         //token stuff - not adding yet
-        window.location.assign("game_page.html")
+        window.location.assign("initial_setting.html")
     } else {
         alert("Looks like there was a problem logging in..." + data.error)
     }

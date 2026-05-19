@@ -13,7 +13,8 @@ function addContext() {
     const scenario_id = 1
 
     // requires api function to retrieve initial_setting from scenarios table using scenario_id
-    // const initialSetting = await fetch(`render_deployed_api/${scenario_id}`)
+    // const response = await fetch(`render_deployed_api/${scenario_id}`)
+    // const initialSetting = response.initial_setting
     const initialSetting = "Test string - youre on a platform!"
 
 
