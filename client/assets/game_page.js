@@ -35,6 +35,16 @@ const exampleQuestions = [
     option_1: "6",
     option_2:"4",
     option_3:"5",
+    },
+
+    {question_id: 3,
+    question: "what is 4+4?",
+    answer: "8",
+    correct_response: "well done",
+    incorrect_reponse:"no i dont think so",
+    option_1: "6",
+    option_2:"8",
+    option_3:"5",
     }
      
 ]
@@ -52,32 +62,32 @@ answerForm.addEventListener("submit", (e) => {
         displayDialogue(scenarioRow.correct_response)
     }
     else{
-        //questionNumber +=1
         displayDialogue(scenarioRow.incorrect_reponse)
     }
     document.querySelector("#submitBtn").disabled = true
 
-    //Lock form once submitted
-    // const elements = answerForm.elements;
-    // for (let i = 0; i < elements.length; i++) {
-    //   elements[i].disabled = true;
-    // }
 })
 
 function loadQuestion(inputQuestionNumber){
-    questionNumber+=1
-    document.querySelector("#submitBtn").disabled = false
-    const scenarioRow = exampleQuestions[questionNumber]
-    const optionOne = document.querySelector("#option_one")
-    const optionTwo = document.querySelector("#option_two")
-    const optionThree = document.querySelector("#option_three")
-    optionOne.value = scenarioRow.option_1
-    optionTwo.value = scenarioRow.option_2
-    optionThree.value = scenarioRow.option_3
-    optionOne.textContent = optionOne.value
-    optionTwo.textContent = optionTwo.value
-    optionThree.textContent = optionThree.value
-    displayDialogue(scenarioRow.question)
+    if (questionNumber < 2){
+       questionNumber+=1
+        document.querySelector("#submitBtn").disabled = false
+        const scenarioRow = exampleQuestions[questionNumber]
+        const optionOne = document.querySelector("#option_one")
+        const optionTwo = document.querySelector("#option_two")
+        const optionThree = document.querySelector("#option_three")
+        optionOne.value = scenarioRow.option_1
+        optionTwo.value = scenarioRow.option_2
+        optionThree.value = scenarioRow.option_3
+        optionOne.textContent = optionOne.value
+        optionTwo.textContent = optionTwo.value
+        optionThree.textContent = optionThree.value
+        gameHeader.textContent = `Mystery Scenario ${questionNumber+1}/3`
+        displayDialogue(scenarioRow.question) 
+    } else{
+        window.location.assign("./results.html")
+    }
+    
 }
 
 // Display dialogue 
