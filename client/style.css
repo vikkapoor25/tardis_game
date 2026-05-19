@@ -44,7 +44,7 @@ footer{
     padding-bottom: 2px;
 }
 
-#trainContainer{
+#gameContainer{
     background-image: url("./assets/train.png");
     background-position: center;
     height: 300px;
