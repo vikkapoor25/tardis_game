@@ -1,4 +1,27 @@
-const Goat = require('../models/Goat');
+async function index(req, res) {
+    res.status(200).json({
+        message: "All scenarios endpoint working"
+    });
+}
+
+async function show(req, res) {
+    res.status(200).json({
+        message: "Single scenario endpoint working"
+    });
+}
+
+async function questions(req, res) {
+    res.status(200).json({
+        message: "Scenario questions endpoint working"
+    });
+}
+
+module.exports = {
+    index, show, questions
+};
+
+
+/* const Goat = require('../models/Goat');
 
 const index = async (req, res) => {
   try {
@@ -53,4 +76,4 @@ const destroy = async (req, res) => {
 }
 
 
-module.exports = { index, show, create, update, destroy }
+module.exports = { index, show, create, update, destroy } */
