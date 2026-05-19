@@ -51,3 +51,11 @@ footer{
     width: 100%;
 
 }
+
+/* Initial Settings Page */
+#start {
+    margin: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
