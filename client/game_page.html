@@ -21,6 +21,7 @@
             </a>
         </div>
     </nav>
+    <hr>
 
 <body>
     <header style="text-align: center;">
@@ -31,18 +32,24 @@
 
     </div>
 
-    <form id="answerForm">
-        <label for="options">Select an answer:</label>
-        <select name="options">
-            <option selected>Select an answer</option>
-            <option id="option_one" value="1">One</option>
-            <option id="option_two" value="2">Two</option>
-            <option id="option_three" value="3">Three</option>
-        </select>
-        <button id="submitBtn" type="submit"> Submit </button>
-    </form>
+    <div id="answerContainer">
+        <form id="answerForm">
+            <label for="options">Select an answer:</label>
+            <select name="options">
+                <option selected>Select an answer</option>
+                <option id="option_one" value="1">One</option>
+                <option id="option_two" value="2">Two</option>
+                <option id="option_three" value="3">Three</option>
+            </select>
+            <button id="submitBtn" type="submit"> Submit </button>
+        </form>
 
-    <button id="go-next" type="button"> Go Next</button>
+        <button id="go-next" type="button">Next Question</button>
+    </div>
+
+    
+
+    
 
 <footer> 2025 All Right Reserved. Tardis inc</footer>
 </body>

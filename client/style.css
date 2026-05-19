@@ -101,6 +101,37 @@ footer{
     border-radius: 100px;
 }
 
+#answerContainer{
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+    gap: 30px
+}
+
+#answerForm select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#answerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 300px;
+    border-radius: 30px;
+    background-color: #f9f9f9;
+}
+
+#submitBtn{
+    margin-top: 20px;
+}
+
+
+
 /* Login and Register pages */
 #accounts {
     display: flex;
@@ -125,6 +156,7 @@ input {
     display: flex;
     justify-content: right;
     align-items: right;
+
 }
 
 #gameContainerInitialSetting {
@@ -135,6 +167,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 12%;
 }
 
 #initialSetting {
@@ -143,5 +176,24 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(156, 145, 115, 0.9);
+    background-color: rgba(200, 187, 153, 0.9);
+    border-radius: 50px;
+    box-shadow: 2px 2px rgb(119, 114, 114);
+}
+
+
+
+button{
+    background-color: #D8CBA8;
+    padding:20px;
+    border: None;
+    border-radius: 20px;
+    box-shadow: 2px 2px rgb(216, 216, 216);
+}
+
+hr{
+    background-color: #D8CBA8;
+    height: 3px;
+    margin-left: 2%;
+    margin-right: 2%;
 }

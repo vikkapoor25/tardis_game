@@ -7,7 +7,7 @@ document.getElementById("start").addEventListener("click", (e) => {
 // update gameContainer to have overlay context info
 //async
 function addContext() {
-    const gameContainer = document.getElementById("gameContainer")
+    const gameContainer = document.getElementById("gameContainerInitialSetting")
 
     // scenario_id in this MVP is 1, hardcoded?
     const scenario_id = 1
