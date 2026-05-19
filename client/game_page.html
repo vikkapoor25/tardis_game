@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TARDIS</title>
     <link rel="stylesheet" href="./style.css">
-
+    <script src="./assets/game_page.js" defer></script>
 </head>
     <nav id="navbar">
         <div id="left-nav">
@@ -31,18 +31,18 @@
 
     </div>
 
-    <form>
+    <form id="answerForm">
         <label for="options">Select an answer:</label>
-        <select  name="options">
+        <select name="options">
             <option selected>Select an answer</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option id="option_one" value="1">One</option>
+            <option id="option_two" value="2">Two</option>
+            <option id="option_three" value="3">Three</option>
         </select>
         <button type="submit"> Submit </button>
     </form>
 
-    <button type="button"> Go Next</button>
+    <button id="go-next"type="button"> Go Next</button>
     <button type="button"> Results </button>
 
 <footer> 2025 All Right Reserved. Tardis inc</footer>
