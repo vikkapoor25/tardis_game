@@ -1,5 +1,6 @@
 * {
     background-color: light blue;
+    box-sizing: border-box;
 }
 
 /* Nav CSS */
@@ -43,3 +44,10 @@ footer{
     padding-bottom: 2px;
 }
 
+#gameContainer{
+    background-image: url("./assets/train.png");
+    background-position: center;
+    height: 300px;
+    width: 100%;
+
+}
