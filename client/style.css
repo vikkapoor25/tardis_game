@@ -127,7 +127,11 @@ input {
     align-items: right;
 }
 
-#gameContainer {
+#gameContainerInitialSetting {
+    background-image: url("./assets/train.png");
+    background-position: center;
+    height: 300px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
