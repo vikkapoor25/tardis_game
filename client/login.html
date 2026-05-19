@@ -7,27 +7,43 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./assets/login.js" defer></script>
 </head>
+<nav id="navbar">
+        <div id="left-nav">
+            <a href="./index.html" id="home-link">Tardis
+            </a>
+            <a href="./subjects.html" id="nav-link">Subjects
+            </a>
+            <a href="./leaderboard.html" id="nav-link">Leaderboard
+            </a>
+        </div>
+        <dib id="right-nav">
+            <a href="./login.html" id="nav-link">Logout
+            </a>
+        </dib>
+    </nav>
 <body>
-    <header>
-        <h1>Welcome To Tardis!</h1>
-    </header>
-    <main>
-        <form id="login-form">
-            <fieldset>
-                <label for="username">Login:</label>
-                <input type="text" id="username" name="username" placeholder="Please enter your school email">
-            </fieldset>
-            <fieldset>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Please enter a secure password">
-            </fieldset>
-            <input type="submit" value="Log In">
-        </form>
-        <hr />
-        <p>Already have an account? <a href="./login.html">Sign in now</a></p>
-    </main>
+    <section id="accounts">
+        <header>
+            <h1>Welcome To Tardis!</h1>
+        </header>
+        <main>
+            <form id="login-form">
+                <fieldset>
+                    <label for="username">Login:</label>
+                    <input type="text" id="username" name="username" placeholder="Please enter your school email">
+                </fieldset>
+                <fieldset>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Please enter your password">
+                </fieldset>
+                <input id="submit" type="submit" value="Log In">
+            </form>
+            <hr />
+            <p>Don't have an account? <a href="./register.html">Sign up now</a></p>
+        </main>
+    </section>
     <footer>
-        <p>2025 All Rights Reserved. Tardis inc.</p>
+        <p>2026 All Rights Reserved. Tardis inc.</p>
     </footer>
 </body>
 </html>
