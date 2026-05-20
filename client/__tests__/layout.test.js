@@ -52,6 +52,13 @@ describe("initial_setting.html", () => {
         expect(otherLinks[2].href).toContain('/login.html')
     })
 
+    it('start button goes to game_page', () => {
+        const startBtn = document.getElementById("start").button
+        
+    })
+
+    i
+
 })
 
 
