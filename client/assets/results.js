@@ -3,7 +3,17 @@ const resultsContainer = document.querySelector("#results-container")
 
 // need async function for fetching results for total score on their scenario
 
-// need async function for fetching results for all wrong answer explanations for the scenario
+// Async function for fetching explanation for all answers
+async function fetchExplanation(){
+    const response = await fetch("http://localhost:3000/explanations/") 
+    if (!response.ok){
+        throw new Error("Not valid")
+    }
+    const data = await response.json()
+    const explanations = data.data.map(el => el.explanation)
+    console.log(explanations)
+    return explanations
+}
 
 async function displayResult(score){
     let header = document.createElement("h2")
@@ -14,10 +24,10 @@ async function displayResult(score){
 
     if (score===9){
         header.textContent = "Congratulations!"
-        resultText.textContent = `You scored 9/9 on Railway Revolutions, Keep it up!`
+        resultText.textContent = `You scored 3/3 on Railway Revolutions, Keep it up!`
     }else{
         header.textContent = "Almost!"
-        resultText.textContent = `You scored ${score}/9 on Railway Revolutions, Go over the explanations below!`
+        resultText.textContent = `You scored ${score}/3 on Railway Revolutions, Go over the explanations below!`
     }
 
     resultsContainer.appendChild(resultsCard)
@@ -25,16 +35,17 @@ async function displayResult(score){
     resultsCard.appendChild(resultText)
 }
 
-async function displayExplanations(explanation){
+async function displayExplanations(){
+    const explanations = await fetchExplanation()
     explanationContainer.innerHTML = "";
-    if (explanation.length > 0){
-        explanation.forEach((explanation) => {
+    if (explanations.length > 0){
+        explanations.forEach((explanations) => {
             const explanationCard = document.createElement("div")
             const explanationText = document.createElement("p")
     
             explanationCard.className = "explanation-card"
     
-            explanationText.textContent = explanation.text
+            explanationText.textContent = explanations
     
             explanationContainer.appendChild(explanationCard)
             explanationCard.appendChild(explanationText)
@@ -42,13 +53,9 @@ async function displayExplanations(explanation){
     }
 }
 
-const explanations = [
-    { text: "Example of explantions 1" },
-    { text: "Example of explantions 2" }
-];
 
-const score = 5
+const score = 3
 
 
-displayExplanations(explanations);
+displayExplanations();
 displayResult(score);
