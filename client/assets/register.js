@@ -15,13 +15,13 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         })
     }
 
-    const response = await fetch("render_deployed_api/users/register", options)
+    const response = await fetch("http://localhost:3000/users/register", options)
     const data = await response.json()
 
     if (response.status == 201) {
         //after registering, go back to login page
         alert("Successfully registered!")
-        window.location.assign("login.html")
+        window.location.assign("./login.html")
     } else {
         alert("Looks like there was a problem registering..." + data.error)
     }
