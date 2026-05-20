@@ -95,7 +95,7 @@ describe('Scenario', () => {
 
       // ACT ------------------------------------------------------------
       // Runs Goat.getAll()
-      const scenario = await scenario.getScenario();
+      const scenario = await Scenario.getScenario();
 
       // ASSERT --------------------------------------------------------
       // Checks 3 questions were returned
@@ -118,7 +118,7 @@ describe('Scenario', () => {
 
       // ACT & ASSERT ---------------------------------------------------
       // Expects Scenario.getScenario() to throw error
-      await expect(Goat.getAll()).rejects.toThrow('No scenarios available.');
+      await expect(Scenario.getScenario()).rejects.toThrow('No scenarios available.');
     });
   })
   
