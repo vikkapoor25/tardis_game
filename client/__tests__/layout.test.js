@@ -52,12 +52,30 @@ describe("initial_setting.html", () => {
         expect(otherLinks[2].href).toContain('/login.html')
     })
 
-    it('start button goes to game_page', () => {
+    it(`Start button exists`, () =>{
         const startBtn = document.getElementById("start").button
+        expect(startBtn).toBeTruthy
+    })
+
+    xit('start button goes to game_page', () => {
+        const startBtn = document.getElementById("start").button
+        expect(startBtn.href).toContain(`/game_page.html`)
         
     })
 
-    i
+    it(`initial setting exists`, () => {
+        const settingContainer = document.getElementById(`initialSetting`)
+        expect(settingContainer).toBeTruthy
+
+
+    })
+
+    it(`initial setting contains correct content`, () => {
+        const settingContainer = document.getElementById(`initialSetting`)
+        settingContainer.value = "You find yourself on a dusty platform, white smoke all around you...The platform is really busy, with all sorts of people, and someone starts to approach you..."
+        expect(settingContainer.innerHTML).toContain(settingContainer.value)
+
+    })
 
 })
 
@@ -99,6 +117,46 @@ describe("game_page.html", () => {
         expect(otherLinks[0].href).toContain('/subjects.html')
         expect(otherLinks[1].href).toContain('/leaderboard.html')
         expect(otherLinks[2].href).toContain('/login.html')
+    })
+
+    it(`displays correct questions`, () =>{
+        const gameContainer = document.getElementById(`gameContainer`)
+        expect(gameContainer.innerHTML).toContain("what is 2+2?");
+    })
+
+    it(`correct answer returns correct message`, () =>{
+        const form = document.querySelector(`form`)
+        const gameContainer = document.getElementById(`gameContainer`)
+        const select = document.querySelector("select[name='options']");
+        select.value = "4";
+
+        form.dispatchEvent(new dom.window.Event('submit'));
+
+        expect(gameContainer.innerHTML).toContain("well done");
+    })
+
+    it(`wrong answer returns correct message`, () =>{
+        const form = document.querySelector(`form`)
+        const gameContainer = document.getElementById(`gameContainer`)
+        const select = document.querySelector("select[name='options']");
+        select.value = "6";
+
+        form.dispatchEvent(new dom.window.Event('submit'));
+
+        expect(gameContainer.innerHTML).toContain("no i dont think so");
+    })
+
+    it(`next question button displays new question`, () => {
+        const nextBtn = document.getElementById(`go-next`)
+        const gameContainer = document.getElementById(`gameContainer`)
+
+        nextBtn.click()
+
+        expect(gameContainer.innerHTML).toContain("what is 3+3?");
+    })
+
+    it(`next question button redirects to results when questions are finished`, () => {
+        
     })
 
 })
