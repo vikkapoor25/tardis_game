@@ -123,3 +123,44 @@ xdescribe('Scenario', () => {
   })
   
 })
+
+// Test suite for Goat.create() ---------------------------------------------
+describe('create', () => {
+
+    // Tests successful goat creation
+    it('resolves with goat on successful creation', async () => {
+
+      // ARRANGE ----------------------------------------------------------------
+      // Fake goat data
+      const goatData = { name: 'plum', age: 99 };
+      // Mocks inserted database row
+      jest.spyOn(db, 'query').mockResolvedValueOnce({ rows: [{ ...goatData, id: 1 }] });
+
+      // ACT ---------------------------------------------------------------------
+      // Runs Goat.create()
+      const result = await Goat.create(goatData);
+
+      // ASSERT ------------------------------------------------------------------
+      // Checks returned object is Goat instance
+      expect(result).toBeInstanceOf(Goat);
+      // Checks returned values
+      expect(result).toHaveProperty('id', 1);
+      expect(result).toHaveProperty('name', 'plum');
+      expect(result).toHaveProperty('age', 99);
+      // Checks correct INSERT query and parameters
+      expect(db.query).toHaveBeenCalledWith("INSERT INTO goats(name, age) VALUES ($1, $2) RETURNING *", [goatData.name, goatData.age]);
+    });
+
+
+    // Tests validation error when age missing
+    it('should throw an Error when age is missing', async () => {
+
+      // ARRANGE ------------------------------------------------------------------------
+      // Missing age field
+      const incompleteGoatData = { name: 'plum' };
+
+      // ACT & ASSERT --------------------------------------------------------------------
+      // Expects Goat.create() to throw validation error
+      await expect(Goat.create(incompleteGoatData)).rejects.toThrow('age is missing');
+    });
+  })
