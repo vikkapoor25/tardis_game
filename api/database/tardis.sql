@@ -31,7 +31,7 @@ CREATE TABLE questions (
     question_id INT GENERATED ALWAYS AS IDENTITY,
     scenario_id INT NOT NULL,
     question VARCHAR(500) NOT NULL,
-    answer VARCHAR(30) NOT NULL,
+    answer VARCHAR(50) NOT NULL,
     correct_response VARCHAR(100) NOT NULL,
     incorrect_response VARCHAR(100) NOT NULL,
     explanation VARCHAR(1000) NOT NULL,
@@ -51,7 +51,9 @@ VALUES
 
     (1, 'We''ve had kids filling the numbers for years now. Shame we can''t get as many in as we used to. Lots of them were under thirteen, but bloody Parliament brought in a new law stopping them from working. What was that act called again?',
     'Factory Act 1844', 'Yes, that''s it.', 'Nah, that doesn''t sound right',
-    'The government introduced laws to improve working conditions, especially for children. These laws limited working hours and introduced inspections. The Factory Act of 1833 prohibited children under 9 from working in textile mills, restricted hours for children, banned night work, and introduced inspectors. The Factory Act 1844 reduced the minimum age for factory work to 8 and limited hours for children under 13.');
+    'The government introduced laws to improve working conditions, especially for children. These laws limited working hours and introduced inspections. The Factory Act of 1833 prohibited children under 9 from working in textile mills, restricted hours for children, banned night work, and introduced inspectors. The Factory Act 1844 reduced the minimum age for factory work to 8 and limited hours for children under 13.'),
+
+    (1, 'Thanks so much for your help! Now, you looked quite lost before but I think you''ve figured out where you are now...Why don''t you take a guess!', 'The Industrial Revolution (1760-1840)', 'Yes, of course we are! Where did you think we were?', 'What are you talking about? Had too much to drink?', '');
 
 CREATE TABLE options (
     option_id INT GENERATED ALWAYS AS IDENTITY,
