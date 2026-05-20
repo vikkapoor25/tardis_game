@@ -1,9 +1,4 @@
-TRUNCATE scores RESTART IDENTITY;
-TRUNCATE options RESTART IDENTITY;
-TRUNCATE event_images RESTART IDENTITY;
-TRUNCATE questions RESTART IDENTITY;
-TRUNCATE scenarios RESTART IDENTITY;
-TRUNCATE users RESTART IDENTITY;
+TRUNCATE TABLE options, event_images, scores, questions, scenarios, users RESTART IDENTITY;
 
 INSERT INTO scenarios (initial_setting, name, category)
 VALUES

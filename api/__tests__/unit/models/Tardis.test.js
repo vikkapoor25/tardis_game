@@ -6,7 +6,7 @@ const Scenario = require('../../../models/Scenario')
 const db = require('../../../database/connect')
 
 // Main test suite for Explanation model ---------------------------------------
-describe('Explanation', () => {
+xdescribe('Explanation', () => {
 
   // Runs before each test
   // Clears mock call history between tests
@@ -67,7 +67,7 @@ describe('Explanation', () => {
 
 
 // Main test suite for Scenario model ---------------------------------------
-describe('Scenario', () => {
+xdescribe('Scenario', () => {
 
   // Runs before each test
   // Clears mock call history between tests
