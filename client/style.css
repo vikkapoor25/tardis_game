@@ -146,17 +146,14 @@ footer{
 }
 
 #login-form, #register-form{
-    padding: 10%;
-    width: 350px;
-    background-color: #f9f9f9;
     margin-top: 50%;
     margin-bottom: 5%;
-    justify-content: center;
 }
 
 #login-submit{
     margin-top: 10%;
-    margin-left: 5%;
+    margin-left: 3%;
+    background-color: #D8CBA8;
 }
 
 #login-link{
@@ -165,11 +162,15 @@ footer{
 
 
 input {
+    background-color: rgb(243, 243, 243);
+    border: none;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 30px;
+    width: 350px;
+    height: 50px;
 }
+
 
 fieldset{
     border: none;
