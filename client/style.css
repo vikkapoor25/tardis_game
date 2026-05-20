@@ -100,3 +100,44 @@ footer{
     justify-content: center;
     border-radius: 100px;
 }
+
+/* Login and Register pages */
+#accounts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+input {
+    width: 250px;
+}
+
+/* Initial Settings Page */
+#start {
+    margin: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#initialSetting {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(156, 145, 115, 0.9);
+}
