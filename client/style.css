@@ -34,6 +34,10 @@
     text-decoration: none;
 }
 
+#navbar a:hover {
+    color: #9c9173;
+}
+
 
 /* Footer CSS */
 
@@ -101,22 +105,75 @@ footer{
     border-radius: 100px;
 }
 
+#answerContainer{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
+    gap: 30px
+}
+
+#answerForm select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#answerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 300px;
+    border-radius: 30px;
+    background-color: #f9f9f9;
+}
+
+#submitBtn{
+    margin-top: 20px;
+}
+
+
+
 /* Login and Register pages */
 #accounts {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 9%;
 }
 
-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#login-form, #register-form{
+    margin-top: 50%;
+    margin-bottom: 5%;
+}
+
+#login-submit{
+    margin-top: 10%;
+    margin-left: 3%;
+    background-color: #D8CBA8;
+}
+
+#login-link{
     text-align: center;
 }
 
+
 input {
-    width: 250px;
+    background-color: rgb(243, 243, 243);
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 50px;
+}
+
+
+fieldset{
+    border: none;
 }
 
 /* Initial Settings Page */
@@ -125,12 +182,18 @@ input {
     display: flex;
     justify-content: right;
     align-items: right;
+
 }
 
-#gameContainer {
+#gameContainerInitialSetting {
+    background-image: url("./assets/train.png");
+    background-position: center;
+    height: 300px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 12%;
 }
 
 #initialSetting {
@@ -139,5 +202,31 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(156, 145, 115, 0.9);
+    background-color: rgba(200, 187, 153, 0.9);
+    border-radius: 50px;
+    box-shadow: 2px 2px rgb(119, 114, 114);
+}
+
+
+
+button{
+    background-color: #D8CBA8;
+    padding:20px;
+    border: None;
+    border-radius: 20px;
+    box-shadow: 2px 2px rgb(216, 216, 216);
+}
+
+button:hover{
+    background-color: #d8ceb3;
+    cursor:pointer;
+}
+
+
+
+hr{
+    background-color: #D8CBA8;
+    height: 3px;
+    margin-left: 2%;
+    margin-right: 2%;
 }

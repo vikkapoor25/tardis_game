@@ -7,24 +7,11 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./assets/login.js" defer></script>
 </head>
-<nav id="navbar">
-        <div id="left-nav">
-            <a href="./index.html" id="home-link">Tardis
-            </a>
-            <a href="./subjects.html" id="nav-link">Subjects
-            </a>
-            <a href="./leaderboard.html" id="nav-link">Leaderboard
-            </a>
-        </div>
-        <dib id="right-nav">
-            <a href="./login.html" id="nav-link">Logout
-            </a>
-        </dib>
-    </nav>
 <body>
     <section id="accounts">
         <header>
             <h1>Welcome To Tardis!</h1>
+            <hr>
         </header>
         <main>
             <form id="register-form">
@@ -36,10 +23,10 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" placeholder="Please enter a secure password">
                 </fieldset>
-                <input type="submit" value="Register">
+                <input id="login-submit" type="submit" value="Register">
             </form>
             <hr />
-            <p>Already have an account? <a href="./login.html">Sign in now</a></p>
+            <p id="login-link">Already have an account? <a href="./login.html">Sign in now</a></p>
         </main>
     </section>
     <footer>
