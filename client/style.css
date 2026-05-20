@@ -49,5 +49,16 @@ footer{
     background-position: center;
     height: 300px;
     width: 100%;
+    display:flex;
+    justify-content: end;
+}
 
+.speech-bubble{
+    background-color: aliceblue;
+    margin-top:5%;
+    height: 100px;
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+    border-radius: 100px;
 }
