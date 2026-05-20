@@ -65,7 +65,7 @@ getScenario().then( data => {
         window.location.assign("./results.html")
     }
     
-}
+    }
     nextButton.addEventListener("click", () => loadQuestion(questionNumber))
     loadQuestion(questionNumber)
 }
