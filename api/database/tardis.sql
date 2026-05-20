@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS questions;
+DROP TABLE IF EXISTS scores;
 DROP TABLE IF EXISTS options;
 DROP TABLE IF EXISTS event_images;
+DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS scenarios;
-DROP TABLE IF EXISTS scores;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -15,29 +15,58 @@ CREATE TABLE users (
 
 CREATE TABLE scenarios (
     scenario_id INT GENERATED ALWAYS AS IDENTITY,
-    initial_setting VARCHAR(200),
-    name VARCHAR(100),
+    initial_setting VARCHAR(200) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    category VARCHAR(50) NOT NULL,
     PRIMARY KEY (scenario_id)
 );
+
+INSERT INTO scenarios (initial_setting, name, category)
+VALUES
+    ('You find yourself on a dusty platform, white smoke all around you...The platform is really busy, with all sorts of people, and someone starts to approach you...', 'Invention of the Steam Engine', 'The Industrial Revolution (1760-1840)'),
+    ('', 'The Railway Revolution', 'The Industrial Revolution (1760-1840)'),
+    ('', 'Child Labour and Factory Conditions', 'The Industrial Revolution (1760-1840)');
 
 CREATE TABLE questions (
     question_id INT GENERATED ALWAYS AS IDENTITY,
     scenario_id INT NOT NULL,
-    question VARCHAR(100) NOT NULL,
+    question VARCHAR(500) NOT NULL,
     answer VARCHAR(30) NOT NULL,
     correct_response VARCHAR(100) NOT NULL,
     incorrect_response VARCHAR(100) NOT NULL,
+    explanation VARCHAR(1000) NOT NULL,
     PRIMARY KEY (question_id),
     FOREIGN KEY (scenario_id) REFERENCES scenarios(scenario_id)
 );
 
+INSERT INTO questions (scenario_id, question, answer, correct_response, incorrect_response, explanation)
+VALUES
+    (1, 'I don''t know, I just build things. Got this fancy engine from a bloke named James. The efficiency of this steam engine''s incredible! Can''t remember his last name though. Do you know it?',
+    'Watt', 'Ah yes, that''s his name!!', 'Nah, I don''t think that''s quite right ...',
+    'James Watt improved the steam engine in the late 1700s. Steam power transformed factories, mining, and transport.'),
+
+    (1, 'The engine''s going to be used on one of those famous trains built by George Stephenson! What was the name of it again?',
+    'The Rocket', 'Ah yes, that sounds right!', 'I don''t think that''s quite right',
+    'During the Industrial Revolution, railways expanded rapidly. George Stephenson built famous foundational steam locomotives, including the Blücher, Locomotion No. 1, and the famous Rocket. Railways transformed travel and trade.'),
+
+    (1, 'We''ve had kids filling the numbers for years now. Shame we can''t get as many in as we used to. Lots of them were under thirteen, but bloody Parliament brought in a new law stopping them from working. What was that act called again?',
+    'Factory Act 1844', 'Yes, that''s it.', 'Nah, that doesn''t sound right',
+    'The government introduced laws to improve working conditions, especially for children. These laws limited working hours and introduced inspections. The Factory Act of 1833 prohibited children under 9 from working in textile mills, restricted hours for children, banned night work, and introduced inspectors. The Factory Act 1844 reduced the minimum age for factory work to 8 and limited hours for children under 13.');
+
 CREATE TABLE options (
     option_id INT GENERATED ALWAYS AS IDENTITY,
     question_id INT NOT NULL,
-    option_value VARCHAR(30) NOT NULL,
+    option_1 VARCHAR(30) NOT NULL,
+    option_2 VARCHAR(30) NOT NULL,
     PRIMARY KEY (option_id),
     FOREIGN KEY (question_id) REFERENCES questions(question_id)
 );
+
+INSERT INTO options (question_id, option_1, option_2)
+VALUES
+    (1, 'Watt', 'Witt'),
+    (2, 'The Salamanca', 'The Rocket'),
+    (3, 'Factory Act 1833', 'Factory Act 1844');
 
 CREATE TABLE event_images (
     image_id INT GENERATED ALWAYS AS IDENTITY,
