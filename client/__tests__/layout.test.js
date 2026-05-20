@@ -3,6 +3,11 @@ const { renderDOM } = require("./helpers")
 let dom;
 let document;
 
+beforeAll(async () => {
+    resultsDom = await renderDOM("./client/results.html")
+    resultsDocument = await resultsDom.window.document
+});
+
 xdescribe("index.html", () => {
     beforeEach(async () => {
         dom = await renderDOM("./client/index.html")
@@ -35,7 +40,6 @@ xdescribe("index.html", () => {
 describe("initial_setting.html", () => {
     beforeEach(async () => {
         dom = await renderDOM("./client/initial_setting.html")
-        // we now have access to a fake 'document' for the rest of the tests
         document = await dom.window.document
     })
 
@@ -83,7 +87,6 @@ describe("initial_setting.html", () => {
 // describe("login.html", () => {
 //     beforeEach(async () => {
 //         dom = await renderDOM("./client/login.html")
-//         // we now have access to a fake 'document' for the rest of the tests
 //         document = await dom.window.document
 //     })
 
@@ -93,7 +96,6 @@ describe("initial_setting.html", () => {
 // describe("register.html", () => {
 //     beforeEach(async () => {
 //         dom = await renderDOM("./client/register.html")
-//         // we now have access to a fake 'document' for the rest of the tests
 //         document = await dom.window.document
 //     })
 
@@ -102,7 +104,6 @@ describe("initial_setting.html", () => {
 describe("game_page.html", () => {
     beforeEach(async () => {
         dom = await renderDOM("./client/game_page.html")
-        // we now have access to a fake 'document' for the rest of the tests
         document = await dom.window.document
     })
 
@@ -156,7 +157,26 @@ describe("game_page.html", () => {
     })
 
     it(`next question button redirects to results when questions are finished`, () => {
-        
+        const form = document.querySelector(`form`)
+        const nextBtn = document.getElementById("go-next")
+        const gameContainer = document.getElementById("gameContainer")
+
+        const select = document.querySelector("select[name='options']");
+        //q1
+        select.value = "4";
+        form.dispatchEvent(new dom.window.Event('submit'));
+        nextBtn.click()
+        //q2
+        select.value = "6"
+        form.dispatchEvent(new dom.window.Event('submit'));
+        nextBtn.click()
+        //q3
+        select.value = "8"
+        form.dispatchEvent(new dom.window.Event('submit'));
+        nextBtn.click()
+
+        // check whether the html page displayed is Railway Revolution
+        expect(resultsDocument.querySelector('h1').innerHTML).toBe("Railway Revolution Results")
     })
 
 })
@@ -164,7 +184,6 @@ describe("game_page.html", () => {
 describe("results.html", () => {
     beforeEach(async () => {
         dom = await renderDOM("./client/results.html")
-        // we now have access to a fake 'document' for the rest of the tests
         document = await dom.window.document
     })
 
