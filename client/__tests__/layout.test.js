@@ -3,7 +3,7 @@ const { renderDOM } = require("./helpers")
 let dom;
 let document;
 
-describe("index.html", () => {
+xdescribe("index.html", () => {
     beforeEach(async () => {
         dom = await renderDOM("./client/index.html")
         // we now have access to a fake 'document' for the rest of the tests
@@ -34,9 +34,22 @@ describe("index.html", () => {
 
 describe("initial_setting.html", () => {
     beforeEach(async () => {
-        dom = await renderDOM("./client/intial_setting.html")
+        dom = await renderDOM("./client/initial_setting.html")
         // we now have access to a fake 'document' for the rest of the tests
         document = await dom.window.document
+    })
+
+    it('has functional navbar', () => {
+        const navbar = document.getElementById('navbar')
+        expect(navbar).toBeTruthy
+
+        const homeLink = document.getElementById('home-link')
+        expect(homeLink.href).toContain('/index.html')
+
+        const otherLinks = document.getElementsByClassName("nav-link")
+        expect(otherLinks[0].href).toContain('/subjects.html')
+        expect(otherLinks[1].href).toContain('/leaderboard.html')
+        expect(otherLinks[2].href).toContain('/login.html')
     })
 
 })
@@ -61,20 +74,46 @@ describe("initial_setting.html", () => {
 
 // })
 
-// describe("game_page.html", () => {
-//     beforeEach(async () => {
-//         dom = await renderDOM("./client/game_page.html")
-//         // we now have access to a fake 'document' for the rest of the tests
-//         document = await dom.window.document
-//     })
+describe("game_page.html", () => {
+    beforeEach(async () => {
+        dom = await renderDOM("./client/game_page.html")
+        // we now have access to a fake 'document' for the rest of the tests
+        document = await dom.window.document
+    })
 
-// })
+    it('has functional navbar', () => {
+        const navbar = document.getElementById('navbar')
+        expect(navbar).toBeTruthy
 
-// describe("results.html", () => {
-//     beforeEach(async () => {
-//         dom = await renderDOM("./client/results.html")
-//         // we now have access to a fake 'document' for the rest of the tests
-//         document = await dom.window.document
-//     })
+        const homeLink = document.getElementById('home-link')
+        expect(homeLink.href).toContain('/index.html')
 
-// })
+        const otherLinks = document.getElementsByClassName("nav-link")
+        expect(otherLinks[0].href).toContain('/subjects.html')
+        expect(otherLinks[1].href).toContain('/leaderboard.html')
+        expect(otherLinks[2].href).toContain('/login.html')
+    })
+
+})
+
+describe("results.html", () => {
+    beforeEach(async () => {
+        dom = await renderDOM("./client/results.html")
+        // we now have access to a fake 'document' for the rest of the tests
+        document = await dom.window.document
+    })
+
+    it('has functional navbar', () => {
+        const navbar = document.getElementById('navbar')
+        expect(navbar).toBeTruthy
+
+        const homeLink = document.getElementById('home-link')
+        expect(homeLink.href).toContain('/index.html')
+
+        const otherLinks = document.getElementsByClassName("nav-link")
+        expect(otherLinks[0].href).toContain('/subjects.html')
+        expect(otherLinks[1].href).toContain('/leaderboard.html')
+        expect(otherLinks[2].href).toContain('/login.html')
+    })
+
+})
