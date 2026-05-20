@@ -10,8 +10,8 @@ describe('TARDIS API Endpoints', () => {
   })
 
   beforeAll(() => {
-    api = app.listen(4000, () => {
-      console.log('Test server running on port 4000')
+    api = app.listen(3000, () => {
+      console.log('Test server running on port 3000')
     })
   })
 
@@ -34,7 +34,6 @@ describe('TARDIS API Endpoints', () => {
     it('should return all scenario with a status code 200', async () => {
       const response = await request(api).get('/scenarios');
 
-
       expect(response.statusCode).toBe(200);
       expect(response.body.data).toBeInstanceOf(Array);
       expect(response.body.data.length).toBeGreaterThan(0);
@@ -46,7 +45,7 @@ describe('TARDIS API Endpoints', () => {
     it('should return all explanations with a status code 200', async () => {
       const response = await request(api).get('/explanations');
 
-      expect(response.statusCode).toBe(200);
+      expect(response.status).toBe(200);
       expect(response.body.data).toBeInstanceOf(Array);
       expect(response.body.data.length).toBeGreaterThan(0);
 
