@@ -1,3 +1,5 @@
+const fetch = require(`node-fetch`)
+
 const explanationContainer = document.querySelector("#explanation-container");
 const resultsContainer = document.querySelector("#results-container")
 

@@ -1,3 +1,6 @@
+const fetch = require(`node-fetch`)
+
+
 const answerForm = document.querySelector("#answerForm");
 const gameContainer = document.querySelector("#gameContainer");
 const nextButton = document.querySelector("#go-next")
