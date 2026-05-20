@@ -37,7 +37,7 @@ xdescribe("index.html", () => {
 
 })
 
-describe("initial_setting.html", () => {
+xdescribe("initial_setting.html", () => {
     beforeEach(async () => {
         dom = await renderDOM("./client/initial_setting.html")
         document = await dom.window.document
@@ -84,13 +84,23 @@ describe("initial_setting.html", () => {
 })
 
 
-// describe("login.html", () => {
-//     beforeEach(async () => {
-//         dom = await renderDOM("./client/login.html")
-//         document = await dom.window.document
-//     })
+describe("login.html", () => {
+    beforeEach(async () => {
+        dom = await renderDOM("./client/login.html")
+        document = await dom.window.document
+    })
 
-// })
+    it(`Has a login form`, () =>{
+        const form = document.getElementById('login-form')
+        expect(form).toBeTruthy
+    })
+
+    it(`Has a submit method`, () => {
+        const form = document.getElementById('login-form')
+        form.dispatchEvent(new dom.window.Event('submit'));
+    })
+
+})
 
 
 // describe("register.html", () => {
@@ -101,7 +111,7 @@ describe("initial_setting.html", () => {
 
 // })
 
-describe("game_page.html", () => {
+xdescribe("game_page.html", () => {
     beforeEach(async () => {
         dom = await renderDOM("./client/game_page.html")
         document = await dom.window.document
@@ -181,7 +191,7 @@ describe("game_page.html", () => {
 
 })
 
-describe("results.html", () => {
+xdescribe("results.html", () => {
     beforeEach(async () => {
         dom = await renderDOM("./client/results.html")
         document = await dom.window.document

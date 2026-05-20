@@ -15,14 +15,12 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
         })
     }
 
-    // const response = await fetch("render_api_link/users/login", options)
-    // const data = await response.json()
-    const response = {
-        status: 200
-    }
-
+    const response = await fetch("http://localhost:3000/users/login", options)
+    const data = await response.json()
+   
     if (response.status == 200) {
         //token stuff - not adding yet
+        localStorage.setItem("token", data.token);
         window.location.assign("initial_setting.html")
     } else {
         alert("Looks like there was a problem logging in..." + data.error)
