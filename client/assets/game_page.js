@@ -10,10 +10,16 @@ nextButton.addEventListener("click", () => loadQuestion(questionNumber))
 //Load questions from API
 
 async function getScenario() {
-  const response = await fetch("http://localhost:3000/scenarios/");
+    const options = {
+        headers: {
+          authorization: localStorage.getItem("token"),
+        },
+      };
+
+  const response = await fetch("http://localhost:3000/scenarios/", options);
   
   if (!response.ok) {
-    throw new Error(`Failed to fetch scenario: ${response.status}`);
+    window.location.assign("./login.html")
   }
   const responseObject = await response.json();
   const data = responseObject.data
