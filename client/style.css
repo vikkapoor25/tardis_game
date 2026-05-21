@@ -202,6 +202,7 @@ fieldset{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: rgba(200, 187, 153, 0.9);
     border-radius: 50px;
     box-shadow: 2px 2px rgb(119, 114, 114);
