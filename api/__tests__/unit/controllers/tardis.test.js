@@ -17,7 +17,7 @@ const mockStatus = jest.fn(() => ({
 
 const mockRes = { status: mockStatus };
 
-xdescribe('Scenario & Explaination Controller', () => {
+describe('Scenario & Explaination Controller', () => {
   beforeEach(() => jest.clearAllMocks())
 
   afterAll(() => jest.resetAllMocks())
