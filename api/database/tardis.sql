@@ -51,7 +51,11 @@ VALUES
 
     (1, 'Anyway, got some kids coming to help with the construction. Pity we can''t get in as many as we used to - that''s parliament! The new law they passed in a real pain...',
     'Factory Act 1844', 'Yes, that''s it.', 'Nah, that doesn''t sound right',
-    'The government introduced laws to improve working conditions, especially for children. These laws limited working hours and introduced inspections. The Factory Act of 1833 prohibited children under 9 from working in textile mills, restricted hours for children, banned night work, and introduced inspectors. The Factory Act 1844 reduced the minimum age for factory work to 8 and limited hours for children under 13.');
+    'The government introduced laws to improve working conditions, especially for children. These laws limited working hours and introduced inspections. The Factory Act of 1833 prohibited children under 9 from working in textile mills, restricted hours for children, banned night work, and introduced inspectors. The Factory Act 1844 reduced the minimum age for factory work to 8 and limited hours for children under 13.'),
+
+    (1, 'Thanks so much for your help! Now, you looked quite lost before but I think you''ve figured out where you are now...Why don''t you take a guess!',
+    'Railway Revolution','Yes, that''s it.', 'Nah, that doesn''t sound right',
+    'The answer is Railway revolution');
 
 CREATE TABLE options (
     option_id INT GENERATED ALWAYS AS IDENTITY,
@@ -66,7 +70,8 @@ INSERT INTO options (question_id, option_1, option_2)
 VALUES
     (1, 'Watt', 'Witt'),
     (2, 'The Salamanca', 'The Rocket'),
-    (3, 'Factory Act 1833', 'Factory Act 1844');
+    (3, 'Factory Act 1833', 'Factory Act 1844'),
+    (4, 'Railway Revolution', 'The Act of Union');
 
 CREATE TABLE event_images (
     image_id INT GENERATED ALWAYS AS IDENTITY,
