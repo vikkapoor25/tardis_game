@@ -155,8 +155,8 @@ describe('create', () => {
     });
 
 
-    // Tests validation error when age missing
-    it('should throw an Error when age is missing', async () => {
+    // Tests validation error when password missing
+    it('should throw an Error when password is missing', async () => {
 
       // ARRANGE ------------------------------------------------------------------------
       // Missing age field
@@ -166,4 +166,17 @@ describe('create', () => {
       // Expects Goat.create() to throw validation error
       await expect(User.create(incompleteUserData)).rejects.toThrow('password is missing');
     });
+
+    it('should throw an Error when username is missing', async () => {
+
+      // ARRANGE ------------------------------------------------------------------------
+      // Missing age field
+      const incompleteUserData = { password: 'testPassword' };
+
+      // ACT & ASSERT --------------------------------------------------------------------
+      // Expects Goat.create() to throw validation error
+      await expect(User.create(incompleteUserData)).rejects.toThrow('username is missing');
+    });
+
+
   })

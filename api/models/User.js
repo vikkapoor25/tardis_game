@@ -33,9 +33,6 @@ class User {
         throw new Error("password is missing")
         }
 
-        if (!data.username || !data.password) {
-        throw new Error("username or password missing")
-        }
         const { username, password, is_student } = data;
         let response = await db.query("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *;",
             [username, password]);
