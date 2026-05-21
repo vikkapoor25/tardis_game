@@ -8,7 +8,7 @@ const User = require('../../../models/User')
 const db = require('../../../database/connect')
 
 // Main test suite for Explanation model ---------------------------------------
-xdescribe('Explanation', () => {
+describe('Explanation', () => {
 
   // Runs before each test
   // Clears mock call history between tests
@@ -52,7 +52,7 @@ xdescribe('Explanation', () => {
 
 
     // Tests error when no explanations are found
-    xit('should throw an Error when no explanations are found', async () => {
+    it('should throw an Error when no explanations are found', async () => {
 
       // ARRANGE --------------------------------------------------------
       // Mocks empty database response
@@ -69,7 +69,7 @@ xdescribe('Explanation', () => {
 
 
 // Main test suite for Scenario model ---------------------------------------
-xdescribe('Scenario', () => {
+describe('Scenario', () => {
 
   // Runs before each test
   // Clears mock call history between tests
