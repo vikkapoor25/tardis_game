@@ -1,7 +1,9 @@
-// Imports Goat model being tested
+// Imports Explantion model being tested
 const Explanation = require('../../../models/Explanation')
-// Imports Goat model being tested
+// Imports Scenario model being tested
 const Scenario = require('../../../models/Scenario')
+// Import User model being tested
+const User = require('../../../models/User')
 // Imports database connection module
 const db = require('../../../database/connect')
 
@@ -50,7 +52,7 @@ xdescribe('Explanation', () => {
 
 
     // Tests error when no explanations are found
-    it('should throw an Error when no explanations are found', async () => {
+    xit('should throw an Error when no explanations are found', async () => {
 
       // ARRANGE --------------------------------------------------------
       // Mocks empty database response
@@ -128,27 +130,28 @@ xdescribe('Scenario', () => {
 describe('create', () => {
 
     // Tests successful goat creation
-    it('resolves with goat on successful creation', async () => {
+    it('resolves with user  on successful creation', async () => {
 
       // ARRANGE ----------------------------------------------------------------
       // Fake goat data
-      const goatData = { name: 'plum', age: 99 };
+      const userData = { user_id: 1, username: 'testName', password: 'testPassword', isAdmin: true  };
       // Mocks inserted database row
-      jest.spyOn(db, 'query').mockResolvedValueOnce({ rows: [{ ...goatData, id: 1 }] });
+      jest.spyOn(db, 'query').mockResolvedValueOnce({ rows: [userData] });
 
       // ACT ---------------------------------------------------------------------
       // Runs Goat.create()
-      const result = await Goat.create(goatData);
+      const result = await User.create(userData);
 
       // ASSERT ------------------------------------------------------------------
       // Checks returned object is Goat instance
-      expect(result).toBeInstanceOf(Goat);
+      expect(result).toBeInstanceOf(User);
       // Checks returned values
       expect(result).toHaveProperty('id', 1);
-      expect(result).toHaveProperty('name', 'plum');
-      expect(result).toHaveProperty('age', 99);
+      expect(result).toHaveProperty('username', 'testName');
+      expect(result).toHaveProperty('password', 'testPassword');
       // Checks correct INSERT query and parameters
-      expect(db.query).toHaveBeenCalledWith("INSERT INTO goats(name, age) VALUES ($1, $2) RETURNING *", [goatData.name, goatData.age]);
+      expect(db.query).toHaveBeenCalledWith("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *;",
+            [userData.username, userData.password])
     });
 
 
@@ -157,10 +160,10 @@ describe('create', () => {
 
       // ARRANGE ------------------------------------------------------------------------
       // Missing age field
-      const incompleteGoatData = { name: 'plum' };
+      const incompleteUserData = { username: 'testName' };
 
       // ACT & ASSERT --------------------------------------------------------------------
       // Expects Goat.create() to throw validation error
-      await expect(Goat.create(incompleteGoatData)).rejects.toThrow('age is missing');
+      await expect(User.create(incompleteUserData)).rejects.toThrow('password is missing');
     });
   })

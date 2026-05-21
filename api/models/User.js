@@ -26,11 +26,20 @@ class User {
     }
 
     static async create(data) {
+
+        if (!data.username) { throw new Error("username is missing") }
+
+        if (!data.password) {
+        throw new Error("password is missing")
+        }
+
+        if (!data.username || !data.password) {
+        throw new Error("username or password missing")
+        }
         const { username, password, is_student } = data;
-        let response = await db.query("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING user_id;",
+        let response = await db.query("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *;",
             [username, password]);
-        const newId = response.rows[0].user_id;
-        const newUser = await User.getOneById(newId);
+        const newUser = new User(response.rows[0])
         return newUser;
     }
 }
