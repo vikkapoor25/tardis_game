@@ -22,7 +22,5 @@ async function addContext() {
 
 addContext()
 
-module.exports = { fetchSetting, addContext }
-
 
 
