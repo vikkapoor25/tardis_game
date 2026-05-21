@@ -47,7 +47,7 @@ getScenario().then( data => {
 
     // Load next question
     function loadQuestion(){
-    if (questionNumber < 2){
+    if (questionNumber < 3){
         questionNumber+=1
         document.querySelector("#submitBtn").disabled = false
         const scenario = data;
