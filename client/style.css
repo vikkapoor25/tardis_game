@@ -1,3 +1,238 @@
 * {
     background-color: light blue;
+    box-sizing: border-box;
+}
+
+/* Nav CSS */
+
+#navbar{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+#left-nav{
+    padding: 2%;
+    display: flex;
+    gap: 100px
+}
+
+#right-nav{
+    margin-left: auto;
+    padding: 2%;
+}
+
+#home-link{
+    color: #9c9173;
+}
+
+.nav-link{
+    color: black;
+}
+
+#navbar a {
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    color: #9c9173;
+}
+
+
+/* Footer CSS */
+
+footer{
+    background-color: #D8CBA8;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 2px;
+}
+
+/* Results Page Css */
+#page-container{
+   text-align: center;
+}
+
+#results-container{
+    background-color: #D8CBA8;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 50px;
+    display:flex;
+    justify-content: center;
+    box-shadow: 2px 2px lightgrey;
+    margin-bottom: 2%;
+}
+
+.result-card{
+    background-color: #F2E8CE;
+    margin-top:5%;
+    margin-bottom:5%;
+    border-radius: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#explanation-container{
+    margin-top: 20px;
+}
+.explanation-card{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 2px lightgrey;
+}
+
+
+/* Game page css */
+
+#gameContainer{
+    background-image: url("./assets/game_page_train.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display:flex;
+    justify-content: end;
+}
+
+.speech-bubble{
+    background-color: aliceblue;
+    margin-top: 3%;
+    height: 100px;
+    width: 40%;
+    text-align: center;
+    justify-content: center;
+    border-radius: 100px;
+}
+
+.speech-bubble p {
+    margin: 5%;
+}
+
+#answerContainer{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
+    gap: 30px
+}
+
+#answerForm select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#answerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 300px;
+    border-radius: 30px;
+    background-color: #f9f9f9;
+}
+
+#submitBtn{
+    margin-top: 20px;
+}
+
+
+
+/* Login and Register pages */
+#accounts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 9%;
+}
+
+#login-form, #register-form{
+    margin-top: 50%;
+    margin-bottom: 5%;
+}
+
+#login-submit{
+    margin-top: 10%;
+    margin-left: 3%;
+    background-color: #D8CBA8;
+}
+
+#login-link{
+    text-align: center;
+}
+
+
+input {
+    background-color: rgb(243, 243, 243);
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 50px;
+}
+
+
+fieldset{
+    border: none;
+}
+
+/* Initial Settings Page */
+#start {
+    margin: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+
+}
+
+#gameContainerInitialSetting {
+    background-image: url("./assets/train.png");
+    background-position: center;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+#initialSetting {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(200, 187, 153, 0.9);
+    border-radius: 50px;
+    box-shadow: 2px 2px rgb(119, 114, 114);
+}
+
+
+
+button{
+    background-color: #D8CBA8;
+    padding:20px;
+    border: None;
+    border-radius: 20px;
+    box-shadow: 2px 2px rgb(216, 216, 216);
+}
+
+button:hover{
+    background-color: #d8ceb3;
+    cursor:pointer;
+}
+
+
+
+hr{
+    background-color: #D8CBA8;
+    height: 3px;
+    margin-left: 2%;
+    margin-right: 2%;
 }

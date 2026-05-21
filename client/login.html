@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./assets/login.js" defer></script>
 </head>
 <body>
-    
+    <section id="accounts">
+        <header>
+            <h1>Welcome To Tardis!</h1>
+            <hr>
+        </header>
+        
+        <main>
+            <form id="login-form">
+                <fieldset>
+                    <label for="username">Login:</label>
+                    <input type="text" id="username" name="username" placeholder="Please enter your school email">
+                </fieldset>
+                <fieldset>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Please enter your password">
+                </fieldset>
+                <input id="login-submit" type="submit" value="Log In">
+            </form>
+            <hr />
+            <p id="login-link">Don't have an account? <a id="link-to-register" href="./register.html">Sign up now</a></p>
+        </main>
+    </section>
+    <footer>
+        <p>2026 All Rights Reserved. Tardis inc.</p>
+    </footer>
 </body>
 </html>
