@@ -87,7 +87,7 @@ footer{
 /* Game page css */
 
 #gameContainer{
-    background-image: url("./assets/train.png");
+    background-image: url("./assets/game_page_train.png");
     background-position: center;
     height: 300px;
     width: 100%;
