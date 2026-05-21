@@ -1,8 +1,3 @@
-// update gameContainer to have overlay context info
-//async
-const fetch = require(`node-fetch`)
-
-
 async function fetchSetting(){
     const response = await fetch("http://localhost:3000/explanations/") 
 
