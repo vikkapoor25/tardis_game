@@ -69,7 +69,7 @@ answerForm.addEventListener("submit", (e) => {
 })
 
 function loadQuestion(inputQuestionNumber){
-    if (questionNumber < 2){
+    if (questionNumber < 3){
        questionNumber+=1
         document.querySelector("#submitBtn").disabled = false
         const scenarioRow = exampleQuestions[questionNumber]

@@ -41,7 +41,7 @@ CREATE TABLE questions (
 
 INSERT INTO questions (scenario_id, question, answer, correct_response, incorrect_response, explanation)
 VALUES
-    (1, 'I don''t know, I just build things. Got this fancy engine from a bloke named James. The efficiency of this steam engine''s incredible! Can''t remember his last name though. Do you know it?',
+    (1, 'Why hello there! Can you help me out? I''ve got a payment to send for a fancy engine from a guy named James. I can''t remember his last name though...Do you know it?',
     'Watt', 'Ah yes, that''s his name!!', 'Nah, I don''t think that''s quite right ...',
     'James Watt improved the steam engine in the late 1700s. Steam power transformed factories, mining, and transport.'),
 
@@ -49,7 +49,7 @@ VALUES
     'The Rocket', 'Ah yes, that sounds right!', 'I don''t think that''s quite right',
     'During the Industrial Revolution, railways expanded rapidly. George Stephenson built famous foundational steam locomotives, including the Blücher, Locomotion No. 1, and the famous Rocket. Railways transformed travel and trade.'),
 
-    (1, 'We''ve had kids filling the numbers for years now. Shame we can''t get as many in as we used to. Lots of them were under thirteen, but bloody Parliament brought in a new law stopping them from working. What was that act called again?',
+    (1, 'Anyway, got some kids coming to help with the construction. Pity we can''t get in as many as we used to - that''s parliament! The new law they passed in a real pain...',
     'Factory Act 1844', 'Yes, that''s it.', 'Nah, that doesn''t sound right',
     'The government introduced laws to improve working conditions, especially for children. These laws limited working hours and introduced inspections. The Factory Act of 1833 prohibited children under 9 from working in textile mills, restricted hours for children, banned night work, and introduced inspectors. The Factory Act 1844 reduced the minimum age for factory work to 8 and limited hours for children under 13.');
 
