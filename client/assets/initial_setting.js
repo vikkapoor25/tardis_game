@@ -1,5 +1,5 @@
 async function fetchSetting(){
-    const response = await fetch("http://localhost:3000/explanations/") 
+    const response = await fetch("https://tardis-game.onrender.com/explanations/") 
 
     if (!response.ok){
         throw new Error("Not valid")

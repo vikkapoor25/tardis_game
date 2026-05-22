@@ -31,7 +31,6 @@
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.21.0",
     "uuid": "^14.0.0",
-    "node-fetch": "^2.7.0"
   },
   "jest": {
     "testPathIgnorePatterns": [

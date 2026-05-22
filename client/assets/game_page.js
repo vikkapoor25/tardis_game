@@ -16,7 +16,7 @@ async function getScenario() {
         },
       };
 
-  const response = await fetch("http://localhost:3000/scenarios/", options);
+  const response = await fetch("https://tardis-game.onrender.com/scenarios/", options);
   
   if (!response.ok) {
     window.location.assign("./login.html")
