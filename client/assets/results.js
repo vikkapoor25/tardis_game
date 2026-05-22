@@ -22,12 +22,12 @@ async function displayResult(score){
 
     resultsCard.className = "result-card"
 
-    if (score===9){
+    if (score===4){
         header.textContent = "Congratulations!"
-        resultText.textContent = `You scored 3/3 on Railway Revolutions, Keep it up!`
+        resultText.textContent = `You scored 4/4 on Railway Revolutions, Keep it up!`
     }else{
         header.textContent = "Almost!"
-        resultText.textContent = `You scored ${score}/3 on Railway Revolutions, Go over the explanations below!`
+        resultText.textContent = `You scored ${score}/4 on Railway Revolutions, Go over the explanations below!`
     }
 
     resultsContainer.appendChild(resultsCard)
@@ -54,7 +54,7 @@ async function displayExplanations(){
 }
 
 
-const score = 3
+const score = 4
 
 
 displayExplanations();

@@ -59,7 +59,7 @@ getScenario().then( data => {
         optionTwo.value = scenarioRow.option_2
         optionOne.textContent = optionOne.value
         optionTwo.textContent = optionTwo.value
-        gameHeader.textContent = `Mystery Scenario ${questionNumber+1}/3`
+        gameHeader.textContent = `Mystery Scenario ${questionNumber+1}/4`
         displayDialogue(scenarioRow.question) 
     } else{
         window.location.assign("./results.html")
