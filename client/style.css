@@ -184,6 +184,7 @@ fieldset{
 /* Initial Settings Page */
 #start {
     margin: 20px;
+    margin: 7%;
     display: flex;
     justify-content: right;
     align-items: right;
