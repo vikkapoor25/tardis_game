@@ -55,7 +55,7 @@ VALUES
 
     (1, 'Thanks so much for your help! Now, you looked quite lost before but I think you''ve figured out where you are now...Why don''t you take a guess!',
     'Railway Revolution','Yes, that''s it.', 'Nah, that doesn''t sound right',
-    'The Mystery Scenario is Railway revolution');
+    'You guessed the scenario as Railway revolution');
 
 CREATE TABLE options (
     option_id INT GENERATED ALWAYS AS IDENTITY,

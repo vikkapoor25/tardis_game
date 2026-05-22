@@ -54,7 +54,7 @@ async function displayExplanations(){
 }
 
 
-const score = 4
+const score = 3
 
 
 displayExplanations();
